@@ -1,4 +1,8 @@
-![Profile Picture](images/profile.jpeg "This is me!")
+
+<div align="center">
+    <img src="images/profile.jpeg" alt="Pravallika Uppala" width="150" style="border-radius: 50%; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+</div>
+
 
 Hi, I’m Pravallika Uppala, a **Data Engineer** and **Machine Learning Enthusiast** passionate about building scalable data pipelines, deploying machine learning models, and creating interactive visualizations. 🚀
 
