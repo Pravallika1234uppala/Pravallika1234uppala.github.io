@@ -1,28 +1,60 @@
-👋 Hello developer!
-This is one of the many templates available from W3schools. Check our tutorials for frontend development to learn the basics of HTML and CSS. 🦄
+Education:
+Masters in Computer Science
+University of Alabama at Birmingham (Jan 2023 – Apr 2024)
+GPA: 3.5/4
 
-🏗 What's next?
-Customize this template to make it your own. Remember to make your layout responsive - if you want your site to look good on smaller screens like mobile.
+Bachelors in Computer Science and Engineering
+Geethanjali College of Engineering and Technology (July 2016 – Oct 2020)
+GPA: 8.5/10
 
-🎨 Where to find everything
-External style sheet: The template you chose is built with W3CSS, placed in an external style sheet. You can either replace that style sheet - or keep it simple and leave it in.
-Go to tutorial about W3CSS
+Experience
+Data Engineer
+TCS – Hyderabad, India (Jan 2021 – Dec 2022)
 
-Fonts: Explore the options from Google fonts and add your favorite.
-Go to tutorial about fonts
+Built ETL pipelines with Apache Kafka and Spark for real-time data processing.
+Implemented RNNs, LSTMs, and transformer models like BERT and GPT for anomaly detection and predictive maintenance.
+Designed dashboards using Tableau, Power BI, and Grafana to visualize equipment health and model performance.
+Deployed systems on AWS and GCP using Kubernetes and Docker.
+Machine Learning Intern
+Citi Bank – India (Jan 2020 – Dec 2020)
 
-Icons: Icons are from Fontawesome. You can reuse those and choose other free icons from their free library.
-Go to tutorial about Fontawesome
+Developed fraud detection and risk assessment models.
+Conducted feature engineering, hyperparameter tuning, and model validation.
+Integrated machine learning solutions into banking systems.
+Data Analyst Intern
+Sipla – India (Apr 2019 – Dec 2019)
 
-Images: Replace the images by uploading your own and updating their URLs.
-Go to article about how to upload files
+Analyzed healthcare data to derive insights on treatment efficacy and patient outcomes.
+Created dashboards and predictive models for healthcare KPIs.
+Technical Skills
+Programming Languages: Python, R, C, HTML/CSS, Java
+Visualization Tools: Tableau, Power BI, Excel
+ETL Tools: Apache Kafka, Apache Spark, AWS Glue
+Cloud Platforms: AWS, GCP, Snowflake
+Databases: SQL, MySQL, PostgreSQL, NoSQL
+Libraries/Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, OpenCV
+Tools: Git, Anaconda, JIRA, Visual Studio Code
+Projects
+Hierarchical Model for Contextual Image Recommendation
 
-⚡️ Tip: Set up Google Analytics to get valuable insights about your space and visitors.
+Achieved a 20% improvement in recommendation accuracy.
+Technologies: Python, TensorFlow, OpenCV
+Optical Character Recognition (OCR)
 
-⛑ Need support?
-Join our Discord community and ask questions in the #spaces-general channel.
+Developed a 95% accurate OCR system for document processing.
+Technologies: Python, Scikit-learn, SVM
+Logistic Regression for Binary Classification
 
-🚀 Upgrade to Pro
-Upgrade your account to boost your space and take your projects to the next level; more requests, more storage and more power for up to 10 spaces.
+Handled missing values and normalized features to achieve high-quality datasets.
+Technologies: Python, Scikit-learn
+Data Handling and Preprocessing for Machine Learning
 
-Happy learning!
+Enhanced data quality by 30% using robust preprocessing techniques.
+Technologies: Python, Pandas, NumPy
+Movie Recommendation System
+
+Achieved a 25% increase in user satisfaction with k-nearest neighbors algorithm.
+Technologies: Python, Pandas, NumPy
+Certifications
+Complete Python Bootcamp for Everyone (2024)
+AWS Certified Cloud Practitioner (CLF-C02)
