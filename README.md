@@ -57,7 +57,7 @@ Hi, I’m Pravallika Uppala, a **Data Engineer** and **Machine Learning Enthusia
 
 ---
 
-## 🛠 Technical Skills
+## 🛠 Skills
 
 - **Programming Languages:** Python, R, C, HTML/CSS, Java  
 - **Visualization Tools:** Tableau, Power BI, Excel  
@@ -73,30 +73,28 @@ Hi, I’m Pravallika Uppala, a **Data Engineer** and **Machine Learning Enthusia
 
 ### 1️⃣ Hierarchical Model for Contextual Image Recommendation
 - 🎯 Achieved a 20% improvement in recommendation accuracy.  
-- **Technologies:** Python, TensorFlow, OpenCV  
+- **Technologies:** Python, TensorFlow, OpenCV
+- 🔗 **[GitHub Link](https://github.com/YourGitHubRepo/Project1)**
 
 ### 2️⃣ Optical Character Recognition (OCR)
 - 🔍 Developed a 95% accurate OCR system for document processing.  
-- **Technologies:** Python, Scikit-learn, SVM  
+- **Technologies:** Python, Scikit-learn, SVM
+- 🔗 **[GitHub Link](https://github.com/YourGitHubRepo/Project1)**
 
 ### 3️⃣ Logistic Regression for Binary Classification
 - ✅ Handled missing values and normalized features to achieve high-quality datasets.  
-- **Technologies:** Python, Scikit-learn  
+- **Technologies:** Python, Scikit-learn
+- 🔗 **[GitHub Link](https://github.com/YourGitHubRepo/Project1)**
 
 ### 4️⃣ Data Handling and Preprocessing for Machine Learning
 - 🔧 Enhanced data quality by 30% using robust preprocessing techniques.  
-- **Technologies:** Python, Pandas, NumPy  
+- **Technologies:** Python, Pandas, NumPy
+- 🔗 **[GitHub Link](https://github.com/YourGitHubRepo/Project1)**
 
 ### 5️⃣ Movie Recommendation System
 - 🎥 Achieved a 25% increase in user satisfaction using KNN.  
-- **Technologies:** Python, Pandas, NumPy  
-
----
-
-## 🏆 Certifications
-
-- 📜 Complete Python Bootcamp for Everyone (2024)  
-- 📜 AWS Certified Cloud Practitioner (CLF-C02)  
+- **Technologies:** Python, Pandas, NumPy
+- 🔗 **[GitHub Link](https://github.com/Pravallika1234uppala/MovieRecommendation-Systems.git)**
 
 ---
 
