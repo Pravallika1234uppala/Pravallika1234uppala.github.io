@@ -1,3 +1,19 @@
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        background: #fafafa;
+    }
+    h1, h2 {
+        font-family: 'Merriweather', serif;
+        color: #6200ea;
+    }
+    p {
+        font-size: 1.1em;
+        line-height: 1.8;
+    }
+</style>
+
 
 <div align="center">
     <img src="images/profile.jpeg" alt="Pravallika Uppala" width="150" style="border-radius: 50%; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
