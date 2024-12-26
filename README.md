@@ -1,4 +1,4 @@
-# 🌟 Pravallika Uppala 
+![Profile Picture](assets/profile.jpg "This is me!")
 
 Hi, I’m Pravallika Uppala, a **Data Engineer** and **Machine Learning Enthusiast** passionate about building scalable data pipelines, deploying machine learning models, and creating interactive visualizations. 🚀
 
