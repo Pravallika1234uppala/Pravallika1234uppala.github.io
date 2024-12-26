@@ -1,4 +1,4 @@
-# Portfolio
+# Pravallika Uppala
 
 ## Education
 - **Masters in Computer Science**  
