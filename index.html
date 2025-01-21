@@ -8,12 +8,12 @@
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #6200ea;
+            background-color: #2c3e50;
             color: white;
             padding: 1rem;
             text-align: center;
@@ -32,7 +32,7 @@
             justify-content: center;
             width: 3rem;
             height: 3rem;
-            background-color: #6200ea;
+            background-color: #34495e;
             color: white;
             border-radius: 50%;
             cursor: pointer;
@@ -44,7 +44,7 @@
             left: 0;
             height: 100%;
             width: 0;
-            background-color: #3700b3;
+            background-color: #2c3e50;
             overflow-x: hidden;
             transition: 0.3s;
             padding-top: 2rem;
@@ -58,74 +58,55 @@
             transition: 0.3s;
         }
         #sideNav a:hover {
-            background-color: #6200ea;
+            background-color: #34495e;
         }
         #mainContent {
-            margin-left: 0;
-            transition: margin-left 0.3s;
             padding: 2rem;
         }
-        .project {
-            background: white;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .project h3 {
-            margin: 0;
-            color: #6200ea;
-        }
-        .project p {
-            margin: 0.5rem 0;
-        }
-        .contact {
-            background-color: #6200ea;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        .contact a {
-            color: #ffcc00;
-            text-decoration: none;
-        }
         footer {
-            background-color: #3700b3;
+            background-color: #2c3e50;
             color: white;
             text-align: center;
             padding: 1rem;
             font-size: 0.9em;
         }
+        .hidden {
+            display: none;
+        }
     </style>
     <script>
         function toggleNav() {
             const sideNav = document.getElementById("sideNav");
-            const mainContent = document.getElementById("mainContent");
             if (sideNav.style.width === "250px") {
                 sideNav.style.width = "0";
-                mainContent.style.marginLeft = "0";
             } else {
                 sideNav.style.width = "250px";
-                mainContent.style.marginLeft = "250px";
             }
         }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll(".content-section");
+            sections.forEach(section => section.classList.add("hidden"));
+            document.getElementById(sectionId).classList.remove("hidden");
+        }
+
+        window.onload = () => showSection('about');
     </script>
 </head>
-<body onload="document.getElementById('about').scrollIntoView();">
+<body>
     <header>
         <h1>Pravallika Uppala</h1>
         <p>Data Engineer | Machine Learning Enthusiast</p>
     </header>
     <div id="menuToggle" onclick="toggleNav()">☰</div>
     <div id="sideNav">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('experience')">Experience</a>
+        <a href="#" onclick="showSection('projects')">Projects</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
     </div>
     <div id="mainContent">
-        <section id="about">
+        <section id="about" class="content-section">
             <h2>About Me</h2>
             <p>Hi, I’m Pravallika Uppala, a Data Engineer and Machine Learning Enthusiast passionate about building scalable data pipelines, deploying machine learning models, and creating interactive visualizations. 🚀</p>
             <p><strong>Education:</strong></p>
@@ -134,7 +115,7 @@
                 <li>Bachelors in Computer Science and Engineering, Geethanjali College of Engineering and Technology (July 2016 – Oct 2020) - GPA: 8.5/10</li>
             </ul>
         </section>
-        <section id="experience">
+        <section id="experience" class="content-section hidden">
             <h2>Experience</h2>
             <h3>Data Engineer - TCS (Jan 2021 – Dec 2022)</h3>
             <ul>
@@ -155,35 +136,17 @@
                 <li>Created dashboards and predictive models for healthcare KPIs.</li>
             </ul>
         </section>
-        <section id="projects">
+        <section id="projects" class="content-section hidden">
             <h2>Projects</h2>
-            <div class="project">
-                <h3>Hierarchical Model for Contextual Image Recommendation</h3>
-                <p><strong>Technologies:</strong> Python, TensorFlow, OpenCV</p>
-                <p>Achieved a 20% improvement in recommendation accuracy.</p>
-            </div>
-            <div class="project">
-                <h3>Optical Character Recognition (OCR)</h3>
-                <p><strong>Technologies:</strong> Python, Scikit-learn, SVM</p>
-                <p>Developed a 95% accurate OCR system for document processing.</p>
-            </div>
-            <div class="project">
-                <h3>Movie Recommendation System</h3>
-                <p><strong>Technologies:</strong> Python, Pandas, NumPy</p>
-                <p>Achieved a 25% increase in user satisfaction using KNN.</p>
-            </div>
-            <div class="project">
-                <h3>Text Summarization using Transformers</h3>
-                <p><strong>Technologies:</strong> Python, Hugging Face Transformers</p>
-                <p>Built an abstractive summarizer achieving human-like results.</p>
-            </div>
-            <div class="project">
-                <h3>Fraud Detection using Ensemble Models</h3>
-                <p><strong>Technologies:</strong> Python, Scikit-learn</p>
-                <p>Implemented XGBoost and Random Forest for accurate fraud detection in financial data.</p>
-            </div>
+            <ul>
+                <li><strong>Hierarchical Model for Contextual Image Recommendation:</strong> Achieved a 20% improvement in recommendation accuracy. (Python, TensorFlow, OpenCV)</li>
+                <li><strong>Optical Character Recognition (OCR):</strong> Developed a 95% accurate OCR system for document processing. (Python, Scikit-learn, SVM)</li>
+                <li><strong>Movie Recommendation System:</strong> Achieved a 25% increase in user satisfaction using KNN. (Python, Pandas, NumPy)</li>
+                <li><strong>Text Summarization using Transformers:</strong> Built an abstractive summarizer achieving human-like results. (Python, Hugging Face Transformers)</li>
+                <li><strong>Fraud Detection using Ensemble Models:</strong> Implemented XGBoost and Random Forest for accurate fraud detection in financial data. (Python, Scikit-learn)</li>
+            </ul>
         </section>
-        <section id="contact" class="contact">
+        <section id="contact" class="content-section hidden">
             <h2>Contact Me</h2>
             <p>Email: <a href="mailto:uppalapravallika09@gmail.com">uppalapravallika09@gmail.com</a></p>
             <p>LinkedIn: <a href="#">LinkedIn Profile</a></p>
