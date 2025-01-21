@@ -22,23 +22,47 @@
             font-family: 'Merriweather', serif;
             margin: 0;
         }
-        nav {
-            background-color: #3700b3;
-            padding: 0.5rem;
+        #menuToggle {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
             display: flex;
+            align-items: center;
             justify-content: center;
-        }
-        nav a {
+            width: 3rem;
+            height: 3rem;
+            background-color: #6200ea;
             color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        #sideNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #3700b3;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 2rem;
+        }
+        #sideNav a {
+            padding: 1rem 2rem;
             text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.1em;
-            font-weight: bold;
+            font-size: 1.2em;
+            color: white;
+            display: block;
+            transition: 0.3s;
         }
-        nav a:hover {
-            text-decoration: underline;
+        #sideNav a:hover {
+            background-color: #6200ea;
         }
-        section {
+        #mainContent {
+            margin-left: 0;
+            transition: margin-left 0.3s;
             padding: 2rem;
         }
         .project {
@@ -74,82 +98,98 @@
             font-size: 0.9em;
         }
     </style>
+    <script>
+        function toggleNav() {
+            const sideNav = document.getElementById("sideNav");
+            const mainContent = document.getElementById("mainContent");
+            if (sideNav.style.width === "250px") {
+                sideNav.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            } else {
+                sideNav.style.width = "250px";
+                mainContent.style.marginLeft = "250px";
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="document.getElementById('about').scrollIntoView();">
     <header>
         <h1>Pravallika Uppala</h1>
         <p>Data Engineer | Machine Learning Enthusiast</p>
     </header>
-    <nav>
+    <div id="menuToggle" onclick="toggleNav()">☰</div>
+    <div id="sideNav">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-    </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, I’m Pravallika Uppala, a Data Engineer and Machine Learning Enthusiast passionate about building scalable data pipelines, deploying machine learning models, and creating interactive visualizations. 🚀</p>
-        <p><strong>Education:</strong></p>
-        <ul>
-            <li>Masters in Computer Science, University of Alabama at Birmingham (Jan 2023 – Apr 2024) - GPA: 3.5/4</li>
-            <li>Bachelors in Computer Science and Engineering, Geethanjali College of Engineering and Technology (July 2016 – Oct 2020) - GPA: 8.5/10</li>
-        </ul>
-    </section>
-    <section id="experience">
-        <h2>Experience</h2>
-        <h3>Data Engineer - TCS (Jan 2021 – Dec 2022)</h3>
-        <ul>
-            <li>Built ETL pipelines with Apache Kafka and Spark for real-time data processing.</li>
-            <li>Implemented RNNs, LSTMs, and transformer models like BERT and GPT for anomaly detection and predictive maintenance.</li>
-            <li>Designed dashboards using Tableau, Power BI, and Grafana.</li>
-            <li>Deployed systems on AWS and GCP using Kubernetes and Docker.</li>
-        </ul>
-        <h3>Machine Learning Intern - Citi Bank (Jan 2020 – Dec 2020)</h3>
-        <ul>
-            <li>Developed fraud detection and risk assessment models.</li>
-            <li>Conducted feature engineering, hyperparameter tuning, and model validation.</li>
-            <li>Integrated machine learning solutions into banking systems.</li>
-        </ul>
-        <h3>Data Analyst Intern - Sipla (Apr 2019 – Dec 2019)</h3>
-        <ul>
-            <li>Analyzed healthcare data to derive insights on treatment efficacy and outcomes.</li>
-            <li>Created dashboards and predictive models for healthcare KPIs.</li>
-        </ul>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Hierarchical Model for Contextual Image Recommendation</h3>
-            <p><strong>Technologies:</strong> Python, TensorFlow, OpenCV</p>
-            <p>Achieved a 20% improvement in recommendation accuracy.</p>
-        </div>
-        <div class="project">
-            <h3>Optical Character Recognition (OCR)</h3>
-            <p><strong>Technologies:</strong> Python, Scikit-learn, SVM</p>
-            <p>Developed a 95% accurate OCR system for document processing.</p>
-        </div>
-        <div class="project">
-            <h3>Movie Recommendation System</h3>
-            <p><strong>Technologies:</strong> Python, Pandas, NumPy</p>
-            <p>Achieved a 25% increase in user satisfaction using KNN.</p>
-        </div>
-        <div class="project">
-            <h3>Text Summarization using Transformers</h3>
-            <p><strong>Technologies:</strong> Python, Hugging Face Transformers</p>
-            <p>Built an abstractive summarizer achieving human-like results.</p>
-        </div>
-        <div class="project">
-            <h3>Fraud Detection using Ensemble Models</h3>
-            <p><strong>Technologies:</strong> Python, Scikit-learn</p>
-            <p>Implemented XGBoost and Random Forest for accurate fraud detection in financial data.</p>
-        </div>
-    </section>
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:uppalapravallika09@gmail.com">uppalapravallika09@gmail.com</a></p>
-        <p>LinkedIn: <a href="#">LinkedIn Profile</a></p>
-        <p>GitHub: <a href="#">GitHub Profile</a></p>
-    </section>
+    </div>
+    <div id="mainContent">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I’m Pravallika Uppala, a Data Engineer and Machine Learning Enthusiast passionate about building scalable data pipelines, deploying machine learning models, and creating interactive visualizations. 🚀</p>
+            <p><strong>Education:</strong></p>
+            <ul>
+                <li>Masters in Computer Science, University of Alabama at Birmingham (Jan 2023 – Apr 2024) - GPA: 3.5/4</li>
+                <li>Bachelors in Computer Science and Engineering, Geethanjali College of Engineering and Technology (July 2016 – Oct 2020) - GPA: 8.5/10</li>
+            </ul>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <h3>Data Engineer - TCS (Jan 2021 – Dec 2022)</h3>
+            <ul>
+                <li>Built ETL pipelines with Apache Kafka and Spark for real-time data processing.</li>
+                <li>Implemented RNNs, LSTMs, and transformer models like BERT and GPT for anomaly detection and predictive maintenance.</li>
+                <li>Designed dashboards using Tableau, Power BI, and Grafana.</li>
+                <li>Deployed systems on AWS and GCP using Kubernetes and Docker.</li>
+            </ul>
+            <h3>Machine Learning Intern - Citi Bank (Jan 2020 – Dec 2020)</h3>
+            <ul>
+                <li>Developed fraud detection and risk assessment models.</li>
+                <li>Conducted feature engineering, hyperparameter tuning, and model validation.</li>
+                <li>Integrated machine learning solutions into banking systems.</li>
+            </ul>
+            <h3>Data Analyst Intern - Sipla (Apr 2019 – Dec 2019)</h3>
+            <ul>
+                <li>Analyzed healthcare data to derive insights on treatment efficacy and outcomes.</li>
+                <li>Created dashboards and predictive models for healthcare KPIs.</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Hierarchical Model for Contextual Image Recommendation</h3>
+                <p><strong>Technologies:</strong> Python, TensorFlow, OpenCV</p>
+                <p>Achieved a 20% improvement in recommendation accuracy.</p>
+            </div>
+            <div class="project">
+                <h3>Optical Character Recognition (OCR)</h3>
+                <p><strong>Technologies:</strong> Python, Scikit-learn, SVM</p>
+                <p>Developed a 95% accurate OCR system for document processing.</p>
+            </div>
+            <div class="project">
+                <h3>Movie Recommendation System</h3>
+                <p><strong>Technologies:</strong> Python, Pandas, NumPy</p>
+                <p>Achieved a 25% increase in user satisfaction using KNN.</p>
+            </div>
+            <div class="project">
+                <h3>Text Summarization using Transformers</h3>
+                <p><strong>Technologies:</strong> Python, Hugging Face Transformers</p>
+                <p>Built an abstractive summarizer achieving human-like results.</p>
+            </div>
+            <div class="project">
+                <h3>Fraud Detection using Ensemble Models</h3>
+                <p><strong>Technologies:</strong> Python, Scikit-learn</p>
+                <p>Implemented XGBoost and Random Forest for accurate fraud detection in financial data.</p>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:uppalapravallika09@gmail.com">uppalapravallika09@gmail.com</a></p>
+            <p>LinkedIn: <a href="#">LinkedIn Profile</a></p>
+            <p>GitHub: <a href="#">GitHub Profile</a></p>
+        </section>
+    </div>
     <footer>
         <p>&copy; 2025 Pravallika Uppala. All rights reserved.</p>
     </footer>
