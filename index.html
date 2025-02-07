@@ -106,6 +106,44 @@
             object-fit: cover; /* Ensures the image fits properly without distortion */
         }
 
+        .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+            }
+            
+            .skill-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: #f4f4f4;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+            }
+            
+            .skill-item i {
+                font-size: 40px;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+        
+            .skill-item p {
+                font-weight: bold;
+            }
+        
+            .skill-item:hover {
+                transform: scale(1.1);
+                background: #e0e0e0;
+            }
+        
+            h3 {
+                margin-top: 20px;
+                font-size: 1.4em;
+                color: #2c3e50;
+          }
     </style>
     <script>
         function toggleNav() {
@@ -192,8 +230,61 @@ Expertise in AI, Deep Learning, and Machine Learning drives the development of c
 
         <section id="skills" class="content-section">
             <h2>Skills</h2>
-            <p></p>
-        </section>
+        
+            <!-- Programming Languages -->
+            <h3>Programming Languages</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-python"></i><p>Python</p></div>
+                <div class="skill-item"><i class="fa fa-code"></i><p>R</p></div>
+                <div class="skill-item"><i class="fa fa-code"></i><p>C</p></div>
+            </div>
+        
+            <!-- Data Visualization & BI -->
+            <h3>Data Visualization & BI</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-bar-chart"></i><p>Tableau</p></div>
+                <div class="skill-item"><i class="fa fa-line-chart"></i><p>Power BI</p></div>
+                <div class="skill-item"><i class="fa fa-file-excel-o"></i><p>Excel</p></div>
+            </div>
+        
+            <!-- Frameworks & Libraries -->
+            <h3>Frameworks & Libraries</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-cogs"></i><p>TensorFlow</p></div>
+                <div class="skill-item"><i class="fa fa-code"></i><p>Keras</p></div>
+                <div class="skill-item"><i class="fa fa-brain"></i><p>PyTorch</p></div>
+                <div class="skill-item"><i class="fa fa-database"></i><p>Scikit-learn</p></div>
+            </div>
+        
+            <!-- Databases -->
+            <h3>Databases</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-database"></i><p>SQL</p></div>
+                <div class="skill-item"><i class="fa fa-database"></i><p>MySQL</p></div>
+                <div class="skill-item"><i class="fa fa-database"></i><p>PostgreSQL</p></div>
+                <div class="skill-item"><i class="fa fa-server"></i><p>MongoDB</p></div>
+            </div>
+        
+            <!-- Tools & Technologies -->
+            <h3>Tools & Technologies</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-git"></i><p>Git</p></div>
+                <div class="skill-item"><i class="fa fa-github"></i><p>GitHub</p></div>
+                <div class="skill-item"><i class="fa fa-map"></i><p>GIS Software</p></div>
+                <div class="skill-item"><i class="fa fa-pencil"></i><p>Annotation Tools</p></div>
+            </div>
+        
+            <!-- Other Skills -->
+            <h3>Other Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-brain"></i><p>Machine Learning</p></div>
+                <div class="skill-item"><i class="fa fa-robot"></i><p>Deep Learning</p></div>
+                <div class="skill-item"><i class="fa fa-language"></i><p>NLP</p></div>
+                <div class="skill-item"><i class="fa fa-magic"></i><p>Generative AI</p></div>
+                <div class="skill-item"><i class="fa fa-sync-alt"></i><p>ETL/ELT Workflows</p></div>
+            </div>
+  </section>
+
 
         <section id="projects" class="content-section">
             <h2>Projects</h2>
