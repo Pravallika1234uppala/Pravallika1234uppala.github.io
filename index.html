@@ -25,6 +25,9 @@
             display: flex;
             justify-content: center; /* Center the content horizontally */
             padding: 20px;
+            height: 100vh;
+            flex-direction: column;
+            overflow-y: scroll;
         }
         
         .container {
@@ -69,33 +72,44 @@
         .header p {
             font-size: 1rem;
         }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
         
         .navbar ul {
             display: flex;
             list-style: none;
             justify-content: center;
-            background-color: #333;
-            margin-top: 20px;
             padding: 10px 0;
-            position: sticky;
-            top: 0;
-            transition: top 0.3s;
         }
         
         .navbar ul li {
             margin: 0 20px;
+            transition: all 0.3s;
         }
         
         .navbar ul li a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
             font-size: 1rem;
             padding: 10px;
             transition: background-color 0.3s ease;
         }
+
+        .navbar ul li.active a {
+            background-color: #007BFF;
+            color: white;
+        }
         
         .navbar ul li a:hover {
             background-color: #555;
+            color: white;
         }
         
         /* Sections */
@@ -112,17 +126,6 @@
             margin-bottom: 15px;
         }
         
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-        }
-        
-        footer p {
-            font-size: 1rem;
-        }
         
         /* Links Styling */
         a {
@@ -171,15 +174,29 @@
     </style>
     <script>
         // Detect the scroll position to show/hide the navbar
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
+         //window.addEventListener('scroll', function() {
+         //   const navbar = document.querySelector('.navbar');
             
             // Check if the page has been scrolled down by 100px or more
-            if (window.scrollY > 100) {
-                navbar.style.top = '0'; // Show navbar
-            } else {
-                navbar.style.top = '-60px'; // Hide navbar
-            }
+          //  if (window.scrollY > 100) {
+            //    navbar.style.top = '0'; // Show navbar
+            //} else {
+              //  navbar.style.top = '-60px'; // Hide navbar
+            //}
+        //});
+        window.addEventListener('scroll', function() {
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('.navbar ul li');
+            let currentPosition = window.scrollY;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                if (currentPosition >= sectionTop && currentPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    navLinks[index].classList.add('active');
+                }
+            });
         });
     </script>
 </head>
@@ -232,6 +249,8 @@
                     <div class="skill-item"><i class="fa fa-code"></i><p>C</p></div>
                 </div>
                 <br>
+                <br>
+                <br>
             
                 <!-- Data Visualization & BI -->
                 <h3>Data Visualization & BI</h3>
@@ -240,6 +259,8 @@
                     <div class="skill-item"><i class="fa fa-line-chart"></i><p>Power BI</p></div>
                     <div class="skill-item"><i class="fa fa-file-excel-o"></i><p>Excel</p></div>
                 </div>
+                <br>
+                <br>
                 <br>
             
                 <!-- Machine Learning & AI -->
@@ -252,6 +273,8 @@
                     <div class="skill-item"><i class="fa fa-magic"></i><p>Generative AI</p></div>
                 </div>
                 <br>
+                <br>
+                <br>
             
                 <!-- Databases -->
                 <h3>Databases</h3>
@@ -261,6 +284,8 @@
                     <div class="skill-item"><i class="fa fa-database"></i><p>PostgreSQL</p></div>
                     <div class="skill-item"><i class="fa fa-server"></i><p>MongoDB</p></div>
                 </div>
+                <br>
+                <br>
                 <br>
             
                 <!-- Frameworks & Libraries -->
@@ -272,6 +297,8 @@
                     <div class="skill-item"><i class="fa fa-database"></i><p>Scikit-learn</p></div>
                 </div>
                 <br>
+                <br>
+                <br>
             
                 <!-- Tools & Technologies -->
                 <h3>Tools & Technologies</h3>
@@ -282,6 +309,8 @@
                     <div class="skill-item"><i class="fa fa-pencil"></i><p>Annotation Tools</p></div>
                 </div>
                 <br>
+                <br>
+                <br>
             
                 <!-- Other Skills -->
                 <h3>Other Skills</h3>
@@ -289,6 +318,8 @@
                     <div class="skill-item"><i class="fa fa-sync-alt"></i><p>ETL/ELT Workflows</p></div>
                     <div class="skill-item"><i class="fa fa-robot"></i><p>Automation</p></div>
                 </div>
+                <br>
+                <br>
                 <br>
             </section>
 
