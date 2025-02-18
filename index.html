@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pravallika Uppala">
+    <meta name="description" content="Pravallika Uppala'">
     <title>Pravallika Uppala</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -21,8 +21,20 @@
         body {
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            padding: 20px;
         }
         
+        .container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 1100px; /* Maximum width of the container */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         /* Header Section */
         .header {
             display: flex;
@@ -90,7 +102,6 @@
             padding: 40px 20px;
             margin: 20px auto;
             background-color: #fff;
-            max-width: 1100px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -122,7 +133,6 @@
         }
     </style>
     <script>
-        
         // Detect the scroll position to show/hide the navbar
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
@@ -138,92 +148,94 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-content">
-            <h1>Pravallika Uppala</h1>
-        </div>
-        <div class="profile-img-container">
-            <img src="images/photo.JPG" alt="Pravallika Uppala" class="profile-img">
-        </div>
-    </header>
-
-    <nav class="navbar">
-        <ul>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Technical Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <div>
-                <p><strong>University of Alabama at Birmingham</strong><br>
-                    MS in Computer Science (Jan 2023 – Apr 2024)<br>
-                    GPA: 3.5/4
-                </p>
-                <p><strong>Geethanjali College of Engineering and Technology</strong><br>
-                    B.Tech in Computer Science Engineering (Jul 2016 – Sep 2020)<br>
-                    GPA: 8.5/10
-                </p>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Pravallika Uppala</h1>
             </div>
-        </section>
+            <div class="profile-img-container">
+                <img src="images/photo.JPG" alt="Pravallika Uppala" class="profile-img">
+            </div>
+        </header>
 
-        <section id="skills" class="section">
-            <h2>Technical Skills</h2>
-            <p><strong>Programming Languages:</strong> Python, R, SQL, C.</p>
-            <p><strong>Data Analysis & Statistical Tools:</strong> Microsoft Excel, SPSS, R, Python.</p>
-            <p><strong>Data Visualization & BI:</strong> Tableau, Power BI, Matplotlib, Seaborn.</p>
-            <p><strong>Machine Learning & AI:</strong> CNN, RNN, Deep Learning, NLP, Generative AI.</p>
-            <p><strong>Operating Systems:</strong> MacOS, Windows.</p>
-        </section>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Technical Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contacts">Contact</a></li>
+            </ul>
+        </nav>
 
-        <section id="experience" class="section">
-            <h2>Experience</h2>
-            <p><strong>Data Analyst Intern, AKC Systems (Aug 2024 – Present)</strong><br>
-                Conducted data analysis for retail and e-commerce clients, built predictive models, and created automated ETL processes.
-            </p>
-            <p><strong>Assistant System Engineer, Tata Consultancy Services (Jan 2021 – Dec 2022)</strong><br>
-                Managed banking data analysis, executed batch jobs, and developed Power BI and Tableau dashboards.
-            </p>
-        </section>
-
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <p><strong>Sentiment Analysis on Amazon Product Reviews</strong><br>
-                <a href="https://github.com/Pravallika1234uppala/Sentiment-Analysis/tree/main/Sentiment%20Analysis">View Project</a><br>
-                Used support vector machine for sentiment prediction on Amazon product reviews.
-            </p>
-            <p><strong>Chatbot using Pretrained LLM (OpenAI's GPT)</strong><br>
-                <a href="https://github.com/Pravallika1234uppala/Chatbot_using_pretrained_LLM/tree/main/CHATBOT">View Project</a><br>
-                Built a Streamlit-based chatbot with OpenAI's GPT.
-            </p>
-            <p><strong>Annotation of COCO Dataset using CNN</strong><br>
-                <a href="https://github.com/Pravallika1234uppala/Annotation/tree/main/Annotation">View Project</a><br>
-                Used convolutional neural networks to automate COCO dataset annotation.
-            </p>
-        </section>
-
-        <section id="certifications" class="section">
-            <h2>Certifications</h2>
-            <p><strong>Generative AI for Beginners</strong> - <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-c19e41e4-4dd2-423f-95a7-6249452ecb9d.jpg">View</a></p>
-            <p><strong>An Introduction to GIS & QGIS</strong> - <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-6f7c2f82-0831-4b2a-bb4b-27ce9ccf712e.jpg">View</a></p>
-        </section>
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:uppalapravallika09@gmail.com">uppalapravallika09@gmail.com</a></p>
-            <p>Phone: <a href="tel:+16692557004">+1 669-255-7004</a></p>
-            <p>GitHub: <a href="https://github.com/Pravallika1234uppala">github/Pravallika1234uppala</a></p>
+        <main>
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <div>
+                    <p><strong>University of Alabama at Birmingham</strong><br>
+                        MS in Computer Science (Jan 2023 – Apr 2024)<br>
+                        GPA: 3.5/4
+                    </p>
+                    <p><strong>Geethanjali College of Engineering and Technology</strong><br>
+                        B.Tech in Computer Science Engineering (Jul 2016 – Sep 2020)<br>
+                        GPA: 8.5/10
+                    </p>
+                </div>
             </section>
 
-    </main>
+            <section id="skills" class="section">
+                <h2>Technical Skills</h2>
+                <p><strong>Programming Languages:</strong> Python, R, SQL, C.</p>
+                <p><strong>Data Analysis & Statistical Tools:</strong> Microsoft Excel, SPSS, R, Python.</p>
+                <p><strong>Data Visualization & BI:</strong> Tableau, Power BI, Matplotlib, Seaborn.</p>
+                <p><strong>Machine Learning & AI:</strong> CNN, RNN, Deep Learning, NLP, Generative AI.</p>
+                <p><strong>Operating Systems:</strong> MacOS, Windows.</p>
+            </section>
 
-    <footer>
-        <p>&copy; 2025 Pravallika Uppala. All Rights Reserved.</p>
-    </footer>
+            <section id="experience" class="section">
+                <h2>Experience</h2>
+                <p><strong>Data Analyst Intern, AKC Systems (Aug 2024 – Present)</strong><br>
+                    Conducted data analysis for retail and e-commerce clients, built predictive models, and created automated ETL processes.
+                </p>
+                <p><strong>Assistant System Engineer, Tata Consultancy Services (Jan 2021 – Dec 2022)</strong><br>
+                    Managed banking data analysis, executed batch jobs, and developed Power BI and Tableau dashboards.
+                </p>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <p><strong>Sentiment Analysis on Amazon Product Reviews</strong><br>
+                    <a href="https://github.com/Pravallika1234uppala/Sentiment-Analysis/tree/main/Sentiment%20Analysis">View Project</a><br>
+                    Used support vector machine for sentiment prediction on Amazon product reviews.
+                </p>
+                <p><strong>Chatbot using Pretrained LLM (OpenAI's GPT)</strong><br>
+                    <a href="https://github.com/Pravallika1234uppala/Chatbot_using_pretrained_LLM/tree/main/CHATBOT">View Project</a><br>
+                    Built a Streamlit-based chatbot with OpenAI's GPT.
+                </p>
+                <p><strong>Annotation of COCO Dataset using CNN</strong><br>
+                    <a href="https://github.com/Pravallika1234uppala/Annotation/tree/main/Annotation">View Project</a><br>
+                    Used convolutional neural networks to automate COCO dataset annotation.
+                </p>
+            </section>
+
+            <section id="certifications" class="section">
+                <h2>Certifications</h2>
+                <p><strong>Generative AI for Beginners</strong> - <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-c19e41e4-4dd2-423f-95a7-6249452ecb9d.jpg">View</a></p>
+                <p><strong>An Introduction to GIS & QGIS</strong> - <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-6f7c2f82-0831-4b2a-bb4b-27ce9ccf712e.jpg">View</a></p>
+            </section>
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <p>Email: <a href="mailto:uppalapravallika09@gmail.com">uppalapravallika09@gmail.com</a></p>
+                <p>Phone: <a href="tel:+16692557004">+1 669-255-7004</a></p>
+                <p>GitHub: <a href="https://github.com/Pravallika1234uppala">github/Pravallika1234uppala</a></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Pravallika Uppala. All Rights Reserved.</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
