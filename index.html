@@ -1,242 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Pravallika Uppala - Data Analyst, Engineer & AI Enthusiast">
-    <meta name="author" content="Pravallika Uppala">
-    <title>Pravallika Uppala - Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-        integrity="sha384-T3c6oIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #000;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-family: 'Merriweather', serif;
-            margin: 0;
-        }
-
-        #menuToggle {
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            background-color: #000;
-            color: white;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        #sideNav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0;
-            background-color: #000;
-            overflow-x: hidden;
-            transition: 0.3s;
-            padding-top: 2rem;
-            z-index: 1001;
-        }
-
-        #sideNav a {
-            padding: 1rem 2rem;
-            text-decoration: none;
-            font-size: 1.2em;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
-
-        #sideNav a:hover {
-            background-color: #222;
-        }
-
-        #sideNav.open {
-            width: 250px;
-        }
-
-        #mainContent {
-            padding: 2rem;
-            margin-left: 0;
-            flex: 1;
-            transition: margin-left 0.3s;
-        }
-
-        #sideNav.open ~ #mainContent {
-            margin-left: 250px;
-        }
-
-        footer {
-            background-color: #000;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9em;
-            position: relative;
-            width: 100%;
-            margin-top: auto;
-        }
-
-        .content-section {
-            display: none;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        .profile-img {
-            width: 300px;
-            height: 300px;
-            display: block;
-            margin: 0 auto;
-            object-fit: cover;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 20px;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .skill-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #f4f4f4;
-            padding: 15px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .skill-item i {
-            font-size: 40px;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .skill-item p {
-            font-weight: bold;
-        }
-
-        .skill-item:hover {
-            transform: scale(1.1);
-            background: #e0e0e0;
-        }
-
-        h3 {
-            margin-top: 20px;
-            font-size: 1.4em;
-            color: #2c3e50;
-        }
-    </style>
-    <script>
-        function toggleNav() {
-            const sideNav = document.getElementById("sideNav");
-            const mainContent = document.getElementById("mainContent");
-            if (sideNav.classList.contains("open")) {
-                sideNav.classList.remove("open");
-                mainContent.style.marginLeft = "0";
-            } else {
-                sideNav.classList.add("open");
-                mainContent.style.marginLeft = "250px";
-            }
-        }
-
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll(".content-section");
-            sections.forEach(section => section.classList.remove("active"));
-            document.getElementById(sectionId).classList.add("active");
-        }
-
-        window.onload = () => showSection('about');
-    </script>
+    <meta name="description" content="Pravallika Uppala's Professional Webpage">
+    <title>Pravallika Uppala - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Pravallika Uppala</h1>
-        <p>Data Analyst, Engineer | ML & AI Enthusiast</p>
+    <header class="header">
+        <div class="profile-img-container">
+            <img src="your-image.jpg" alt="Pravallika Uppala" class="profile-img">
+        </div>
+        <div class="header-content">
+            <h1>Pravallika Uppala</h1>
+            <p>Email: <a href="mailto:uppalapravallika09@gmail.com">uppalapravallika09@gmail.com</a></p>
+            <p>Phone: <a href="tel:+16692557004">+1 669-255-7004</a></p>
+            <p>GitHub: <a href="https://github.com/Pravallika1234uppala">github/Pravallika1234uppala</a></p>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Technical Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+        </nav>
     </header>
-    <div id="menuToggle" onclick="toggleNav()">☰</div>
-    <div id="sideNav">
-        <a href="#" onclick="showSection('about')">About</a>
-        <a href="#" onclick="showSection('education')">Education</a>
-        <a href="#" onclick="showSection('experience')">Experience</a>
-        <a href="#" onclick="showSection('skills')">Skills</a>
-        <a href="#" onclick="showSection('projects')">Projects</a>
-        <a href="#" onclick="showSection('contact')">Contact</a>
-    </div>
-    <div id="mainContent">
-        <section id="about" class="content-section active">
-            <h2>About Me</h2>
-            <img src="images/IMG_5170.jpg" alt="Profile Photo" class="profile-img">
-            <p>Hi, I’m Pravallika Uppala, a Data Analyst, Engineer and AI Enthusiast passionate about building scalable data pipelines, deploying machine learning models, and creating interactive visualizations.</p>
-            <p>
-                My expertise lies in transforming complex datasets into actionable insights that drive strategic decision-making. Advanced statistical techniques, data visualization, and exploratory data analysis (EDA) are employed to uncover patterns and trends within large datasets. With a deep understanding of business goals, data is presented in a way that ensures both accuracy and alignment with organizational objectives. This work supports informed decision-making, enabling teams to optimize processes, predict future trends, and make data-driven choices.
+
+    <main>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div>
+                <p><strong>University of Alabama at Birmingham</strong><br>
+                    MS in Computer Science (Jan 2023 – Apr 2024)<br>
+                    GPA: 3.5/4
+                </p>
+                <p><strong>Geethanjali College of Engineering and Technology</strong><br>
+                    B.Tech in Computer Science Engineering (Jul 2016 – Sep 2020)<br>
+                    GPA: 8.5/10
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
+            <p><strong>Programming Languages:</strong> Python, R, SQL, C.</p>
+            <p><strong>Data Analysis & Statistical Tools:</strong> Microsoft Excel, SPSS, R, Python.</p>
+            <p><strong>Data Visualization & BI:</strong> Tableau, Power BI, Matplotlib, Seaborn.</p>
+            <p><strong>Machine Learning & AI:</strong> CNN, RNN, Deep Learning, NLP, Generative AI.</p>
+            <p><strong>Operating Systems:</strong> MacOS, Windows.</p>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <p><strong>Data Analyst Intern, AKC Systems (Aug 2024 – Present)</strong><br>
+                Conducted data analysis for retail and e-commerce clients, built predictive models, and created automated ETL processes.
+            </p>
+            <p><strong>Assistant System Engineer, Tata Consultancy Services (Jan 2021 – Dec 2022)</strong><br>
+                Managed banking data analysis, executed batch jobs, and developed Power BI and Tableau dashboards.
             </p>
         </section>
-        <section id="education" class="content-section">
-            <h2>Education</h2>
-            <div class="education-entry">
-                <h3> Masters in Computer Science, <strong>University of Alabama at Birmingham</strong></h3>
-                <p>
-                <span class="duration">Jan 2023 – Apr 2024</span></p>
-            </div>
-            <div class="education-entry">
-                <h3> Bachelors in Computer Science and Engineering, <strong>Geethanjali College of Engineering and Technology</strong></h3>
-                <p>
-                <span class="duration">July 2016 – Aug 2020</span></p>
-            </div>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <p><strong>Sentiment Analysis on Amazon Product Reviews</strong><br>
+                <a href="https://github.com/Pravallika1234uppala/Sentiment-Analysis/tree/main/Sentiment%20Analysis">View Project</a><br>
+                Used support vector machine for sentiment prediction on Amazon product reviews.
+            </p>
+            <p><strong>Chatbot using Pretrained LLM (OpenAI's GPT)</strong><br>
+                <a href="https://github.com/Pravallika1234uppala/Chatbot_using_pretrained_LLM/tree/main/CHATBOT">View Project</a><br>
+                Built a Streamlit-based chatbot with OpenAI's GPT.
+            </p>
+            <p><strong>Annotation of COCO Dataset using CNN</strong><br>
+                <a href="https://github.com/Pravallika1234uppala/Annotation/tree/main/Annotation">View Project</a><br>
+                Used convolutional neural networks to automate COCO dataset annotation.
+            </p>
         </section>
-        <section id="experience" class="content-section">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Data Analyst Intern, AKC Systems – Remote, USA</h3>
-                <p>Apr 2024 – Present</p>
-                <p>Reviewed and annotated large-scale product imagery datasets, ensuring AI accuracy and data consistency while optimizing workflows with engineers.</p>
-            </div>
-            <div class="experience-item">
-                <h3>Assistant System Engineer, Tata Consultancy Services – Hyderabad, INDIA</h3>
-                <p>Jan 2021 – Dec 2022</p>
-                <p>Executed and monitored daily batch jobs for a Citi Bank project, ensuring accuracy, resolving issues, and optimizing workflows for seamless operations.</p>
-            </div>
+
+        <section id="certifications" class="section">
+            <h2>Certifications</h2>
+            <p><strong>Generative AI for Beginners</strong> - <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-c19e41e4-4dd2-423f-95a7-6249452ecb9d.jpg">View</a></p>
+            <p><strong>An Introduction to GIS & QGIS</strong> - <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-6f7c2f82-0831-4b2a-bb4b-27ce9ccf712e.jpg">View</a></p>
         </section>
-        <section id="skills" class="content-section">
-            <h2>Skills</h2>
-            <h3>Programming Languages</h3>
-            <div class="skills-grid">
-                <div class="skill-item"><i class="fa fa-python"></i><p>Python</p></div>
-                <div class="skill-item"><i class="fa fa-code"></i><p>R</p></div>
-                <div class="skill-item"><i class="fa fa-code"></i><p>C</p></div>
-            </div>
-            <h3>Data Visualization & BI</h3>
-            <div class="skills-grid">
-                <div class="skill-item"><i class="fa fa-bar-chart"></i><p>Tableau</p></div>
-                <div class
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
