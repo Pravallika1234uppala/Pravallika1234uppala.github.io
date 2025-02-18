@@ -9,125 +9,234 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
         integrity="sha384-T3c6oIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="Style/style.css">
-    <link rel="stylesheet" href="Style/style-responsive.css">
-    <script defer src="assets/JS/javascript.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+        }
+
+        #menuToggle {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background-color: #000;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #sideNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #000;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 2rem;
+            z-index: 1001;
+        }
+
+        #sideNav a {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sideNav a:hover {
+            background-color: #222;
+        }
+
+        #sideNav.open {
+            width: 250px;
+        }
+
+        #mainContent {
+            padding: 2rem;
+            margin-left: 0;
+            flex: 1;
+            transition: margin-left 0.3s;
+        }
+
+        #sideNav.open ~ #mainContent {
+            margin-left: 250px;
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9em;
+            position: relative;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .skill-item i {
+            font-size: 40px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .skill-item p {
+            font-weight: bold;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+            background: #e0e0e0;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.4em;
+            color: #2c3e50;
+        }
+    </style>
+    <script>
+        function toggleNav() {
+            const sideNav = document.getElementById("sideNav");
+            const mainContent = document.getElementById("mainContent");
+            if (sideNav.classList.contains("open")) {
+                sideNav.classList.remove("open");
+                mainContent.style.marginLeft = "0";
+            } else {
+                sideNav.classList.add("open");
+                mainContent.style.marginLeft = "250px";
+            }
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll(".content-section");
+            sections.forEach(section => section.classList.remove("active"));
+            document.getElementById(sectionId).classList.add("active");
+        }
+
+        window.onload = () => showSection('about');
+    </script>
 </head>
 <body>
     <header>
         <h1>Pravallika Uppala</h1>
         <p>Data Analyst, Engineer | ML & AI Enthusiast</p>
     </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="content">
-        <section id="about">
-            <h2>About Me</h2>
-            <img src="images/photo.JPG" alt="Profile Photo" class="profile-img">
-            <p>Hi, I’m Pravallika Uppala, a Data Analyst, Engineer, and AI Enthusiast specializing in Machine Learning, AI, and Data Science.</p>
-        </section>
-        <section id="education">
-            <h2>Education</h2>
-            <p><strong>Masters in Computer Science</strong> - University of Alabama at Birmingham</p>
-            <p><strong>Bachelors in Computer Science</strong> - Geethanjali College</p>
-        </section>
-        <section id="experience">
-            <h2>Experience</h2>
-            <p><strong>Postdoctoral Researcher</strong> - Janssen Pharmaceuticals (June 2023 - Present, Boston, MA)</p>
-            <ul>
-                <li>Developed a transformers-based architecture for detecting Pulmonary Hypertension from echocardiography images.</li>
-                <li>Implemented a framework to integrate optical flow data into self-supervised training of video models.</li>
-                <li>Introduced a novel interpretability method, 'Weiner Attributions', for enhanced comprehension of deep learning models.</li>
-            </ul>
-            <p><strong>Postdoctoral Research Fellow</strong> - Harvard University / Harvard Medical School (July 2022 - June 2023, Boston, MA)</p>
-            <ul>
-                <li>Developed algorithms to learn from multimodal biomedical data (dMRI, fMRI, EEG, and Audio/Video Interviews).</li>
-                <li>Analyzed chronic pain and psychosis sub-types using NLP-transformers and Explainable AI.</li>
-                <li>Designed a new Deep Belief Networks-based approach to model Wisdom of Crowds data.</li>
-            </ul>
-            <p><strong>PhD Research Intern</strong> - IBM Research (May 2021 - August 2021, Yorktown Heights, NY)</p>
-            <ul>
-                <li>Developed robust predictive biomarkers of chronic pain using multi-view learning and expert-guided ML.</li>
-                <li>Studied invariant representations for denoising and data harmonization using self-supervised learning.</li>
-            </ul>
-            <p><strong>Software Developer (Core Team, Maintainer)</strong> - DIPY (May 2018 - Present)</p>
-            <ul>
-                <li>Developed a self-supervised learning framework for denoising 4D diffusion MRI data.</li>
-                <li>Implemented Constrained Deconvolution reconstruction using Spherical Harmonics.</li>
-            </ul>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <p>Python, R, SQL, Machine Learning, Deep Learning, Power BI, Azure Data Factory...</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p><strong>Bank Customer Exit Prediction</strong> (ANN Classification)</p>
-            <p><strong>Sentiment Analysis on Amazon Product Reviews</strong></p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:uppalapravallika09@gmail.com">uppalapravallika09@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/pravallikauppala">LinkedIn Profile</a></p>
-        </section>
+    <div id="menuToggle" onclick="toggleNav()">☰</div>
+    <div id="sideNav">
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('education')">Education</a>
+        <a href="#" onclick="showSection('experience')">Experience</a>
+        <a href="#" onclick="showSection('skills')">Skills</a>
+        <a href="#" onclick="showSection('projects')">Projects</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
     </div>
-    <script>
-        // JS to handle active section and scroll behavior
-    
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('nav a');  // Selecting navigation links
-            const sections = document.querySelectorAll('.content section');  // Selecting all sections in the content
-            let activeLink = null;  // Variable to keep track of the active link
-    
-            // Function to check if a section is in the viewport
-            function isSectionInViewport(section) {
-                const rect = section.getBoundingClientRect();
-                return rect.top <= window.innerHeight && rect.bottom >= 0;
-            }
-    
-            // Function to update the active link based on the section in the viewport
-            function updateActiveLink() {
-                sections.forEach(section => {
-                    if (isSectionInViewport(section)) {
-                        navLinks.forEach(link => {
-                            // Check if the link's href matches the section's id
-                            if (link.getAttribute('href').replace('#', '') === section.id) {
-                                if (activeLink) {
-                                    activeLink.classList.remove('active');  // Remove the 'active' class from the previous active link
-                                }
-                                link.classList.add('active');  // Add the 'active' class to the current link
-                                activeLink = link;  // Update the active link
-                            }
-                        });
-                    }
-                });
-            }
-    
-            // Function for smooth scrolling behavior when clicking a link
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();  // Prevent the default link behavior
-                    const targetSection = document.querySelector(link.getAttribute('href'));  // Get the target section
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth'  // Smooth scrolling effect
-                    });
-                });
-            });
-    
-            // Listen for scroll events and update the active link
-            window.addEventListener('scroll', updateActiveLink);
-    
-            // Update the active link on page load
-            updateActiveLink();
-        });
-    </script>
-
-</body>
-</html>
-
+    <div id="mainContent">
+        <section id="about" class="content-section active">
+            <h2>About Me</h2>
+            <img src="images/IMG_5170.jpg" alt="Profile Photo" class="profile-img">
+            <p>Hi, I’m Pravallika Uppala, a Data Analyst, Engineer and AI Enthusiast passionate about building scalable data pipelines, deploying machine learning models, and creating interactive visualizations.</p>
+            <p>
+                My expertise lies in transforming complex datasets into actionable insights that drive strategic decision-making. Advanced statistical techniques, data visualization, and exploratory data analysis (EDA) are employed to uncover patterns and trends within large datasets. With a deep understanding of business goals, data is presented in a way that ensures both accuracy and alignment with organizational objectives. This work supports informed decision-making, enabling teams to optimize processes, predict future trends, and make data-driven choices.
+            </p>
+        </section>
+        <section id="education" class="content-section">
+            <h2>Education</h2>
+            <div class="education-entry">
+                <h3> Masters in Computer Science, <strong>University of Alabama at Birmingham</strong></h3>
+                <p>
+                <span class="duration">Jan 2023 – Apr 2024</span></p>
+            </div>
+            <div class="education-entry">
+                <h3> Bachelors in Computer Science and Engineering, <strong>Geethanjali College of Engineering and Technology</strong></h3>
+                <p>
+                <span class="duration">July 2016 – Aug 2020</span></p>
+            </div>
+        </section>
+        <section id="experience" class="content-section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Data Analyst Intern, AKC Systems – Remote, USA</h3>
+                <p>Apr 2024 – Present</p>
+                <p>Reviewed and annotated large-scale product imagery datasets, ensuring AI accuracy and data consistency while optimizing workflows with engineers.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Assistant System Engineer, Tata Consultancy Services – Hyderabad, INDIA</h3>
+                <p>Jan 2021 – Dec 2022</p>
+                <p>Executed and monitored daily batch jobs for a Citi Bank project, ensuring accuracy, resolving issues, and optimizing workflows for seamless operations.</p>
+            </div>
+        </section>
+        <section id="skills" class="content-section">
+            <h2>Skills</h2>
+            <h3>Programming Languages</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-python"></i><p>Python</p></div>
+                <div class="skill-item"><i class="fa fa-code"></i><p>R</p></div>
+                <div class="skill-item"><i class="fa fa-code"></i><p>C</p></div>
+            </div>
+            <h3>Data Visualization & BI</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-bar-chart"></i><p>Tableau</p></div>
+                <div class
