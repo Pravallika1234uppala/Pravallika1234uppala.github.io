@@ -20,12 +20,12 @@
         
         /* Body and main layout */
         body {
-            background-color: #f4f4f4;
+            background-color: linear-gradient(135deg, #6e7dff, #a1a7f5);
             color: #333;
             display: flex;
             justify-content: center; /* Center the content horizontally */
             align-items: center;
-            padding: 5px;
+            padding: 10px;
             height: 100%;
             flex-direction: column;
             overflow-y: scroll;
@@ -35,23 +35,29 @@
             background-color: #fff;
             width: 100%;
             max-width: 1100px; /* Maximum width of the container */
-            padding: 10px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
 
         /* Header Section */
         .header {
             display: flex;
             flex-direction: column;
-            padding: 10px;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
         
         .profile-img-container {
-            margin-top: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
         }
         
         .profile-img {
@@ -59,25 +65,27 @@
             height: 200px;
             border-radius: 60%;
             object-fit: cover;
+            border: 4px solid #007BFF;
         }
         
         .header-content {
+            color: #007BFF;
             text-align: center;
         }
         
         .header h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
         
         .header p {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
 
         .navbar {
             position: sticky;
             top: 0;
-            z-index: 300;
+            z-index: 500;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
@@ -87,24 +95,26 @@
             display: flex;
             list-style: none;
             justify-content: center;
-            padding: 10px 0;
+            padding: 15px 0;
+            background-color: #007BFF;
+            border-radius: 8px;
         }
         
         .navbar ul li {
-            margin: 0 20px;
+            margin: 0 15px;
             transition: all 0.3s;
         }
         
         .navbar ul li a {
-            color: #333;
+            color: white;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
             padding: 10px;
             transition: background-color 0.3s ease;
         }
 
         .navbar ul li.active a {
-            background-color: #007BFF;
+            background-color: #0066cc;
             color: white;
         }
         
@@ -118,13 +128,14 @@
             padding: 40px 20px;
             margin: 20px auto;
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
         .section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #007BFF;
         }
         
         
@@ -149,42 +160,31 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background-color: #f4f4f4;
-            padding: 15px;
-            border-radius: 8px;
+            background-color: #f0f4f7;
+            padding: 20px;
+            border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .skill-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
         }
         
         .skill-item i {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
         
         .skill-item p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             text-align: center;
             margin-top: 5px;
         }
         
     </style>
     <script>
-        // Detect the scroll position to show/hide the navbar
-         //window.addEventListener('scroll', function() {
-         //   const navbar = document.querySelector('.navbar');
-            
-            // Check if the page has been scrolled down by 100px or more
-          //  if (window.scrollY > 100) {
-            //    navbar.style.top = '0'; // Show navbar
-            //} else {
-              //  navbar.style.top = '-60px'; // Hide navbar
-            //}
-        //});
         window.addEventListener('scroll', function() {
             let sections = document.querySelectorAll('section');
             let navLinks = document.querySelectorAll('.navbar ul li');
@@ -207,6 +207,7 @@
         <header class="header">
             <div class="header-content">
                 <h1>Pravallika Uppala</h1>
+                <p>MS Computer Science | Data Analyst</p>
             </div>
             <div class="profile-img-container">
                 <img src="images/photo.JPG" alt="Pravallika Uppala" class="profile-img">
