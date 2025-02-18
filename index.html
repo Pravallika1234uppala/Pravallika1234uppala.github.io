@@ -3,79 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Pravallika Uppala - Data Analyst, Engineer & AI Enthusiast">
+    <meta name="author" content="Pravallika Uppala">
     <title>Pravallika Uppala - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-        header {
-            background-color: #000;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        nav {
-            position: fixed;
-            top: 3.5rem;
-            left: 0;
-            width: 100%;
-            background: #222;
-            text-align: center;
-            padding: 0.5rem 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 1rem;
-            margin: 0 1rem;
-            display: inline-block;
-        }
-        nav a.active {
-            border-bottom: 2px solid #fff;
-        }
-        .content {
-            padding: 6rem 2rem 2rem;
-        }
-        section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #ccc;
-            min-height: 100vh;
-        }
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            display: block;
-            margin: 0 auto;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll("nav a");
-
-            function changeActiveLink() {
-                let index = sections.length;
-                while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
-                navLinks.forEach(link => link.classList.remove("active"));
-                navLinks[index].classList.add("active");
-            }
-
-            changeActiveLink();
-            window.addEventListener("scroll", changeActiveLink);
-        });
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        integrity="sha384-T3c6oIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/style-responsive.css">
+    <script defer src="assets/JS/javascript.js"></script>
 </head>
 <body>
     <header>
@@ -93,26 +29,47 @@
     <div class="content">
         <section id="about">
             <h2>About Me</h2>
-            <img src="images/IMG_5170.jpg" alt="Profile Photo" class="profile-img">
-            <p>Hi, I’m Pravallika Uppala, a Data Analyst, Engineer, and AI Enthusiast...</p>
+            <img src="images/profile.jpg" alt="Profile Photo" class="profile-img">
+            <p>Hi, I’m Pravallika Uppala, a Data Analyst, Engineer, and AI Enthusiast specializing in Machine Learning, AI, and Data Science.</p>
         </section>
         <section id="education">
             <h2>Education</h2>
-            <p>Masters in Computer Science - University of Alabama at Birmingham</p>
-            <p>Bachelors in Computer Science - Geethanjali College</p>
+            <p><strong>Masters in Computer Science</strong> - University of Alabama at Birmingham</p>
+            <p><strong>Bachelors in Computer Science</strong> - Geethanjali College</p>
         </section>
         <section id="experience">
             <h2>Experience</h2>
-            <p>Data Analyst Intern - AKC Systems</p>
-            <p>Assistant System Engineer - Tata Consultancy Services</p>
+            <p><strong>Postdoctoral Researcher</strong> - Janssen Pharmaceuticals (June 2023 - Present, Boston, MA)</p>
+            <ul>
+                <li>Developed a transformers-based architecture for detecting Pulmonary Hypertension from echocardiography images.</li>
+                <li>Implemented a framework to integrate optical flow data into self-supervised training of video models.</li>
+                <li>Introduced a novel interpretability method, 'Weiner Attributions', for enhanced comprehension of deep learning models.</li>
+            </ul>
+            <p><strong>Postdoctoral Research Fellow</strong> - Harvard University / Harvard Medical School (July 2022 - June 2023, Boston, MA)</p>
+            <ul>
+                <li>Developed algorithms to learn from multimodal biomedical data (dMRI, fMRI, EEG, and Audio/Video Interviews).</li>
+                <li>Analyzed chronic pain and psychosis sub-types using NLP-transformers and Explainable AI.</li>
+                <li>Designed a new Deep Belief Networks-based approach to model Wisdom of Crowds data.</li>
+            </ul>
+            <p><strong>PhD Research Intern</strong> - IBM Research (May 2021 - August 2021, Yorktown Heights, NY)</p>
+            <ul>
+                <li>Developed robust predictive biomarkers of chronic pain using multi-view learning and expert-guided ML.</li>
+                <li>Studied invariant representations for denoising and data harmonization using self-supervised learning.</li>
+            </ul>
+            <p><strong>Software Developer (Core Team, Maintainer)</strong> - DIPY (May 2018 - Present)</p>
+            <ul>
+                <li>Developed a self-supervised learning framework for denoising 4D diffusion MRI data.</li>
+                <li>Implemented Constrained Deconvolution reconstruction using Spherical Harmonics.</li>
+            </ul>
         </section>
         <section id="skills">
             <h2>Skills</h2>
-            <p>Python, R, SQL, Machine Learning, Deep Learning, Power BI...</p>
+            <p>Python, R, SQL, Machine Learning, Deep Learning, Power BI, Azure Data Factory...</p>
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <p>Bank Customer Exit Prediction (ANN Classification)</p>
+            <p><strong>Bank Customer Exit Prediction</strong> (ANN Classification)</p>
+            <p><strong>Sentiment Analysis on Amazon Product Reviews</strong></p>
         </section>
         <section id="contact">
             <h2>Contact</h2>
@@ -122,3 +79,4 @@
     </div>
 </body>
 </html>
+
