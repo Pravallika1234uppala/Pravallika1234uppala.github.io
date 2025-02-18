@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pravallika Uppala - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #000;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+        }
+        #menuToggle {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background-color: #000;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        #sideNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #000;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 2rem;
+            z-index: 1001;
+        }
+        #sideNav a {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        #sideNav a:hover {
+            background-color: #222;
+        }
+        #sideNav.open {
+            width: 250px;
+        }
+        #mainContent {
+            padding: 2rem;
+            margin-left: 0;
+            flex: 1;
+            transition: margin-left 0.3s;
+        }
+        #sideNav.open ~ #mainContent {
+            margin-left: 250px;
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9em;
+            position: relative;
+            width: 100%;
+            margin-top: auto;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .project-image {
+      width: 250px; /* Fixed width */
+      height: 100px; /* Fixed height */
+     }
+        
+       .profile-img {
+            width: 300px;
+            height: 300px;
+            display: block;  /* Makes the image a block element */
+            margin: 0 auto;  /* Centers the image horizontally */
+            object-fit: cover; /* Ensures the image fits properly without distortion */
+        }
+
+        .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+            }
+            
+            .skill-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: #f4f4f4;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+            }
+            
+            .skill-item i {
+                font-size: 40px;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+        
+            .skill-item p {
+                font-weight: bold;
+            }
+        
+            .skill-item:hover {
+                transform: scale(1.1);
+                background: #e0e0e0;
+            }
+        
+            h3 {
+                margin-top: 20px;
+                font-size: 1.4em;
+                color: #2c3e50;
+          }
+    </style>
+    <script>
+        function toggleNav() {
+            const sideNav = document.getElementById("sideNav");
+            const mainContent = document.getElementById("mainContent");
+            if (sideNav.classList.contains("open")) {
+                sideNav.classList.remove("open");
+                mainContent.style.marginLeft = "0";
+            } else {
+                sideNav.classList.add("open");
+                mainContent.style.marginLeft = "250px";
+            }
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll(".content-section");
+            sections.forEach(section => section.classList.remove("active"));
+            document.getElementById(sectionId).classList.add("active");
+        }
+
+        window.onload = () => showSection('about');
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Pravallika Uppala</h1>
+        <p>Data Analyst, Engineer | ML & AI Enthusiast</p>
+    </header>
+    <div id="menuToggle" onclick="toggleNav()">☰</div>
+    <div id="sideNav">
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('education')">Education</a>
+        <a href="#" onclick="showSection('experience')">Experience</a>
+        <a href="#" onclick="showSection('skills')">Skills</a>
+        <a href="#" onclick="showSection('projects')">Projects</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </div>
+    <div id="mainContent">
+        <section id="about" class="content-section active">
+            <h2>About Me</h2>
+            <img src="images/IMG_5170.jpg" alt="Profile Photo" class="profile-img">
+            <p>Hi, I’m Pravallika Uppala, a Data Analyst, Engineer and AI Enthusiast passionate about building scalable data pipelines, deploying machine learning models, and creating interactive visualizations.</p>
+            <p>
+                My expertise lies in transforming complex datasets into actionable insights that drive strategic decision-making. Advanced statistical techniques, data visualization, and exploratory data analysis (EDA) are employed to uncover patterns and trends within large datasets. With a deep understanding of business goals, data is presented in a way that ensures both accuracy and alignment with organizational objectives. This work supports informed decision-making, enabling teams to optimize processes, predict future trends, and make data-driven choices.
+            </p>
+            <p>
+I also focus is placed on designing and implementing scalable, efficient data pipelines to manage large volumes of data across diverse platforms. Proficiency with cloud technologies such as AWS, along with big data tools like Hadoop and Apache Spark, helps to build robust architectures that power machine learning and analytical systems. Data is processed efficiently and made accessible in real-time, supporting both internal teams and clients with timely insights. Through automation and optimization, workflows are streamlined, enhancing operational efficiency in the data management process.
+            </p>
+            <p>
+Conducted research to explore and develop new methodologies and algorithms within AI and machine learning. Specialization in building predictive models and improving anomaly detection through artificial neural networks (ANN), convolutional neural networks (CNN), and recurrent neural networks (RNN) leads to the creation of solutions for various domains, from predictive analytics to complex problem-solving. The focus remains on refining approaches to enhance model accuracy and performance, ensuring that solutions are both innovative and grounded in sound scientific research.
+Expertise in AI, Deep Learning, and Machine Learning drives the development of cutting-edge solutions that push the boundaries of technology. Proficiency with advanced frameworks such as TensorFlow, PyTorch, and Keras enables the implementation of deep learning architectures for real-world challenges, including computer vision tasks like image recognition, time-series forecasting, and natural language processing. Continuous exploration of new methods improves model efficiency and accuracy, contributing to collaborative teams working at the intersection of data science, engineering, and AI.
+            </p>
+        </section>
+        <section id="education" class="content-section">
+            <h2>Education</h2>
+            <div class="education-entry">
+                <h3> Masters in Computer Science, <strong>University of Alabama at Birmingham</strong></h3>
+                <p>
+                <span class="duration">Jan 2023 – Apr 2024</span></p>
+            </div>
+            <div class="education-entry">
+                <h3> Bachelors in Computer Science and Engineering, <strong>Geethanjali College of Engineering and Technology</strong></h3>
+                <p>
+                <span class="duration">July 2016 – Aug 2020</span></p>
+            </div>
+        </section>
+
+        <section id="experience" class="content-section">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Data Analyst Intern, AKC Systems – Remote, USA</h3>
+                <p>Apr 2024 – Present</p>
+                <p>Reviewed and annotated large-scale product imagery datasets, ensuring AI accuracy and data consistency while optimizing workflows with engineers.</p>
+            </div>
+        
+            <div class="experience-item">
+                <h3>Assistant System Engineer, Tata Consultancy Services – Hyderabad, INDIA</h3>
+                <p>Jan 2021 – Dec 2022</p>
+                <p>Executed and monitored daily batch jobs for a Citi Bank project, ensuring accuracy, resolving issues, and optimizing workflows for seamless operations.</p>
+            </div>
+        </section>
+
+
+        <section id="skills" class="content-section">
+            <h2>Skills</h2>
+        
+            <!-- Programming Languages -->
+            <h3>Programming Languages</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-python"></i><p>Python</p></div>
+                <div class="skill-item"><i class="fa fa-code"></i><p>R</p></div>
+                <div class="skill-item"><i class="fa fa-code"></i><p>C</p></div>
+            </div>
+        
+            <!-- Data Visualization & BI -->
+            <h3>Data Visualization & BI</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-bar-chart"></i><p>Tableau</p></div>
+                <div class="skill-item"><i class="fa fa-line-chart"></i><p>Power BI</p></div>
+                <div class="skill-item"><i class="fa fa-file-excel-o"></i><p>Excel</p></div>
+            </div>
+        
+            <!-- Frameworks & Libraries -->
+            <h3>Frameworks & Libraries</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-cogs"></i><p>TensorFlow</p></div>
+                <div class="skill-item"><i class="fa fa-code"></i><p>Keras</p></div>
+                <div class="skill-item"><i class="fa fa-brain"></i><p>PyTorch</p></div>
+                <div class="skill-item"><i class="fa fa-database"></i><p>Scikit-learn</p></div>
+            </div>
+        
+            <!-- Databases -->
+            <h3>Databases</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-database"></i><p>SQL</p></div>
+                <div class="skill-item"><i class="fa fa-database"></i><p>MySQL</p></div>
+                <div class="skill-item"><i class="fa fa-database"></i><p>PostgreSQL</p></div>
+                <div class="skill-item"><i class="fa fa-server"></i><p>MongoDB</p></div>
+            </div>
+        
+            <!-- Tools & Technologies -->
+            <h3>Tools & Technologies</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-git"></i><p>Git</p></div>
+                <div class="skill-item"><i class="fa fa-github"></i><p>GitHub</p></div>
+                <div class="skill-item"><i class="fa fa-map"></i><p>GIS Software</p></div>
+                <div class="skill-item"><i class="fa fa-pencil"></i><p>Annotation Tools</p></div>
+            </div>
+        
+            <!-- Other Skills -->
+            <h3>Other Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa fa-brain"></i><p>Machine Learning</p></div>
+                <div class="skill-item"><i class="fa fa-robot"></i><p>Deep Learning</p></div>
+                <div class="skill-item"><i class="fa fa-language"></i><p>NLP</p></div>
+                <div class="skill-item"><i class="fa fa-magic"></i><p>Generative AI</p></div>
+                <div class="skill-item"><i class="fa fa-sync-alt"></i><p>ETL/ELT Workflows</p></div>
+            </div>
+  </section>
+
+
+        <section id="projects" class="content-section">
+            <h2>Projects</h2>
+            <div class="project-entry">
+                <h3>1. Bank Customer Exit Prediction (ANN CLASSIFICATION)</h3>
+                <div class="project-content">
+                    <img src="images/screenshot.png" alt="Bank Customer Exit Prediction" class="project-image">
+                    <div class="project-description">
+                        <p>This project focuses on predicting customer churn for a bank using ANN. The goal is to identify customers who are likely to exit, enabling the bank to take proactive measures to retain them. By predicting customer churn, the bank can target retention strategies, such as personalized offers, to enhance customer loyalty.</p>
+                        <p>
+                            <strong>Technologies Used:</strong> Python, TensorFlow, Keras, Scikit-learn, Pandas, ANN (Artificial Neural Network), Data Preprocessing
+                        </p>
+                        <p>
+                            <a href="https://github.com/Pravallika1234uppala/ChurnPrediction-ANN-Classification.git" target="_blank" class="github-link">GitHub Repository</a> |
+                            <a href="https://churnprediction-ann-classification-crgme9yvzgf3jb5wzdxo9h.streamlit.app/" target="_blank" class="view-link">View Live Project</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:uppalapravallika09@gmail.com">uppalapravallika09@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/pravallikauppala"><i class="fa fa-linkedin-square"></i></a></p>
+            <p>GitHub: <a href="https://github.com/Pravallika1234uppala"><i class="fa fa-github"></i></a></p>
+        </section>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
