@@ -24,10 +24,10 @@
             color: #333;
             display: flex;
             justify-content: center; /* Center the content horizontally */
-            padding: 20px;
-            height: 100vh;
+            padding: 0;
+            height: 100%;
             flex-direction: column;
-            overflow-y: scroll;
+            overflow-y: hidden;
         }
         
         .container {
@@ -37,6 +37,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 70px;
         }
 
         /* Header Section */
@@ -75,6 +76,7 @@
 
         .navbar {
             position: sticky;
+            top: 0;
             z-index: 100;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
